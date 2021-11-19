@@ -34,6 +34,7 @@ public class GolfActivity extends AppCompatActivity implements SurfaceHolder.Cal
     private Paint player;
     private Paint time;
     private Paint goal;
+    private Paint scorePaint;
     Double hMovement = 0.0;
     Double vMovement = 0.0;
     float[] mGravity;
@@ -43,7 +44,7 @@ public class GolfActivity extends AppCompatActivity implements SurfaceHolder.Cal
     boolean noGoal = true;
     float hGoal = 0;
     float vGoal = 0;
-    int score = 0;
+    int score = -1;
     int frameCounter = 0;
     int actualTime = 10;
 
@@ -52,6 +53,11 @@ public class GolfActivity extends AppCompatActivity implements SurfaceHolder.Cal
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_golf);
+
+        //Score
+        this.scorePaint = new Paint();
+        scorePaint.setTextSize(60f);
+        scorePaint.setColor(getColor(R.color.black));
 
         //Time
         this.time = new Paint();
@@ -120,8 +126,8 @@ public class GolfActivity extends AppCompatActivity implements SurfaceHolder.Cal
 
         canvas.drawColor(getColor(android.R.color.white));
         canvas.drawCircle(canvas.getWidth() / 2 + testh, canvas.getHeight() / 2 + testv, ticks % 200, this.player);
-        canvas.drawText(String.valueOf(actualTime), canvas.getWidth() - 100, canvas.getHeight() - 100, this.time);
-        canvas.drawText(String.valueOf(score), canvas.getWidth() + 100, canvas.getHeight() - 100, this.time);
+        canvas.drawText(String.valueOf("Time: " + actualTime), canvas.getWidth() - 250, canvas.getHeight() - 800, this.time);
+        canvas.drawText(String.valueOf("Score: " + score), canvas.getWidth() - 1700, canvas.getHeight() - 800, this.scorePaint);
 
         //check for collision
         double dx = (Double.parseDouble(String.valueOf(canvas.getWidth() / 2 + vGoal)) + (ticks % 200)) - (Double.parseDouble(String.valueOf(canvas.getWidth() / 2 + testh)) + (ticks % 200));
