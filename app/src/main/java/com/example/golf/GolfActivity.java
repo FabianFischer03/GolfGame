@@ -207,52 +207,52 @@ public class GolfActivity extends AppCompatActivity implements SurfaceHolder.Cal
             vMovement = 0.0;
         }
         if (pitch >= -20 && pitch < 0) {
-            hMovement = 0.325;
+            hMovement = 1.0;
         }
         if (pitch >= -40 && pitch < -20) {
-            hMovement = 0.65;
+            hMovement = 1.5;
         }
         if (pitch >= -60 && pitch < -40) {
-            hMovement = 0.976;
+            hMovement = 2.0;
         }
         if (pitch >= -80 && pitch < -60) {
-            hMovement = 1.3;
+            hMovement = 2.5;
         }
         if (pitch >= 20 && pitch > 0) {
-            hMovement = -0.325;
+            hMovement = -1.0;
         }
         if (pitch >= 40 && pitch > 20) {
-            hMovement = -0.65;
+            hMovement = -1.5;
         }
         if (pitch >= 60 && pitch > 40) {
-            hMovement = -0.976;
+            hMovement = -2.0;
         }
         if (pitch >= 80 && pitch > 60) {
-            hMovement = -1.3;
+            hMovement = -2.5;
         }
         if (roll >= -20 && roll < 0) {
-            vMovement = 0.325;
+            vMovement = 1.0;
         }
         if (roll >= -40 && roll < -20) {
-            vMovement = 0.65;
+            vMovement = 1.5;
         }
         if (roll >= -60 && roll < -40) {
-            vMovement = 0.976;
+            vMovement = 2.0;
         }
         if (roll >= -80 && roll < -60) {
-            vMovement = 1.3;
+            vMovement = 2.5;
         }
         if (roll >= 20 && roll > 0) {
-            vMovement = -0.325;
+            vMovement = -1.0;
         }
         if (roll >= 40 && roll > 20) {
-            vMovement = -0.65;
+            vMovement = -1.5;
         }
         if (roll >= 60 && roll > 40) {
-            vMovement = -0.976;
+            vMovement = -2.0;
         }
         if (roll >= 80 && roll > 60) {
-            vMovement = -1.3;
+            vMovement = -2.5;
         }
     }
 
